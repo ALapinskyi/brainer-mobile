@@ -1,0 +1,10 @@
+<div class="energy">
+    <div class="energy-item"  *ngFor="let in of counter(maxPower); let i = index">
+        <div class="rectangle" [ngClass]="{'full': i < power, 'charging': i === power}"></div>
+    </div>
+    <div class="timer">
+        <p>
+          <countdown [config]="{leftTime: time}" (finished)="onTimerFinished()">$!m!:$!s!</countdown>
+        </p>
+    </div>
+</div>

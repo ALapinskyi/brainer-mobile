@@ -1,0 +1,108 @@
+page-single-play {
+
+    .toolbar-title {
+        text-align: left;
+        position: relative;
+        left: 2em;
+        font-weight: bold;
+    }
+
+    ion-footer {
+
+        .toolbar-background {
+            background: transparent;
+        }
+    }
+
+    ion-footer, ion-navbar {
+
+        button>span>ion-icon{
+            color: color($colors, primary, base);
+        }
+    }
+
+    .fab-close-icon {
+        line-height: 45px;
+    }
+
+
+    #shape-background{
+        overflow:hidden;
+    }
+    #shape-background:before{
+        content:'';
+        position:absolute;    
+        top: -24px;
+        left: 117px;
+        width: 142px;
+        height: 50px;
+        border-radius: 25px;
+        box-shadow: 0px 0px 0px 9999px color($colors, secondary, base);
+        z-index:-1;
+    
+    }
+
+    ion-fab-list {
+        margin: 50px 0;
+    }
+
+    #start-new-game {
+        margin-left: -65px;
+    
+        .fab {
+            width: 8em;
+            border-radius: 2em;
+            height: 3.5em;
+            font-size: 1.3em;
+            text-transform: uppercase;
+            bottom: 0.5em;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 0.4em solid #255599;
+            background-image: linear-gradient(to bottom, #f33f4e, #a02731);
+        }
+    
+        .show {
+            width: 10em;
+            border: none;
+            font-size: 1em;
+            text-transform: none;
+            height: 3.5em;
+            bottom: 2em;
+            margin: 0.3em 0;
+        }
+    
+    }
+    
+    
+    #singlePlay-heading {
+        color: color($colors, primary, base);
+        padding-left: 15px;
+    }
+    
+    #footer-game {
+        height: 4em;
+        background-color: color($colors, secondary, base);
+    
+    }
+
+    .game-values {
+        display: inline;
+        padding-left: 5em;
+
+        .coins {
+            vertical-align: top;
+            margin-top: 0.4em;
+            display: inline-block;
+            font-size: 1.3em;
+            padding-right: 1em;
+
+            ion-icon, p {
+                display: inline-block;
+                margin: 0;
+                color: color($colors, yellowed, base);
+            }
+
+        }
+    }
+}

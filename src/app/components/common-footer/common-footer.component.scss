@@ -1,0 +1,24 @@
+@import "../../../global.scss";
+
+.fab-close-icon {
+  line-height: 45px;
+}
+
+ion-fab-list {
+  margin: 50px 0;
+}
+
+#start-new-game {
+  width: 8em;
+  border-radius: 2em;
+  height: 3.5em;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  bottom: 0.5em;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0.4em solid #255599;
+  background-image: linear-gradient(to bottom, #f33f4e, #a02731);
+  color: var(--ion-color-light);
+  position: absolute;
+}

@@ -1,0 +1,21 @@
+@import "../../../global.scss";
+
+.game-values {
+  display: inline;
+  padding-right: 0.5em;
+
+  .coins {
+    vertical-align: top;
+    margin-top: 0.4em;
+    display: inline-block;
+    font-size: 1.3em;
+    padding-right: 1em;
+
+    ion-icon, p {
+      display: inline-block;
+      margin: 0;
+      color: var(--ion-color-yellowed);
+    }
+
+  }
+}

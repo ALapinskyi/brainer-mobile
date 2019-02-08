@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar hideBackButton="true" color="secondary">
+    <!--<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>-->
+    <ion-title class="toolbar-title">
+      Single Play
+    </ion-title>
+    <ion-buttons  slot="start">
+      <ion-button>
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons  slot="end" class="game-values">
+      <div class="coins">
+        <ion-icon name="logo-bitcoin"></ion-icon>
+        <p>{{coins}}</p>
+      </div>
+      <power-timer [time]='3' [power]='2'></power-timer>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Round results
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="round-results">
+  <round-details-item [round]="round" *ngFor="let round of game.rounds"></round-details-item>
+</ion-content>

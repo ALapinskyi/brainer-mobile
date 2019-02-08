@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <!--<button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>-->
+        <ion-title>
+            Single Play
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button icon-only>
+                <ion-icon name="settings"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons end class="game-values">
+            <div class="coins">
+                <ion-icon name="logo-bitcoin"></ion-icon>
+                <p>{{coins}}</p>
+            </div>
+            <power-timer [time]="3" [power]="2"></power-timer>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding id="simple-game-page">
+
+
+    <ion-card id="{{item.id}}" *ngFor="let item of actualGames">
+        <game-round-item
+                (onClick)="item.waitingFor === currentUser.username ? selectGame($event) : goToRoundInfo($event)"
+                [ngClass]="{'your-turn':item.waitingFor === currentUser.username}"
+                [item]="item"></game-round-item>
+    </ion-card>
+
+
+    <ion-fab center bottom id="start-new-game">
+        <button ion-fab color="primary">Start new</button>
+        <ion-fab-list side="top">
+            <button ion-fab>Quick game</button>
+            <button ion-fab>Play with friend</button>
+            <button ion-fab>Find user</button>
+        </ion-fab-list>
+    </ion-fab>
+
+    <ion-footer id="footer-game">
+        <ion-navbar>
+            <ion-buttons middle>
+                <button ion-button icon-only>
+                    <ion-icon name="md-undo"></ion-icon>
+                </button>
+            </ion-buttons>
+            <ion-buttons end>
+                <button ion-button icon-only>
+                    <ion-icon name="md-trophy"></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-navbar>
+    </ion-footer>
+</ion-content>
