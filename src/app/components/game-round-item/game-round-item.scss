@@ -1,56 +1,61 @@
-game-round-item {
-    .game-card {
-        background-color: color($colors, oranged, base);
-        padding: 0px;
-        text-align: center;       
+@import "../../../global.scss";
 
-
-        .grid, .col {
-            padding: 0;
-            height: 6em;
-        }
-
-        .round{
-            padding: 1.2em 0;
-
-            div{
-                font-size: 1.2em;
-            }
-        }
-
-        .info {
-            padding: 1.4em;
-
-            .card-title {
-                font-size: 1.2em;
-                font-weight: bold;
-            }
-
-            .card-subtitle {
-                font-size: 0.9em;
-                font-style: italic;
-                color: color($colors, secondary, base);
-            }
-        }
-
-        .score {
-            padding: 1.5em 0;
-            
-            div{
-                font-size: 2em;
-                font-weight: bold;
-            }
-        }
-    }
-
-    hr.vertical {
-        height: auto; 
-        width: 0;
-        border: 0.5px solid color($colors, secondary, base);
-        margin: 0;
-    }
+ion-card {
+  margin: 0 0 10px 0;
 }
 
-game-round-item.your-turn .game-card {
-    background-color: color($colors, greened, base);
+.game-card {
+  background-color: var(--ion-color-oranged);
+  padding: 0px;
+  text-align: center;
+  color: var(--ion-color-light);
+
+
+  ion-grid, ion-col {
+    padding: 0;
+    height: 6em;
+  }
+
+  .round {
+    padding: 1.2em 0;
+
+    div {
+      font-size: 1.2em;
+    }
+  }
+
+  .info {
+    padding: 1.4em 0.5em;
+
+    .card-title {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    .card-subtitle {
+      font-size: 0.9em;
+      color: var(--ion-color-secondary);
+    }
+  }
+
+  .score {
+    padding: 1.5em 0;
+
+    div {
+      font-size: 1.7em;
+      font-weight: bold;
+    }
+  }
+}
+
+hr.vertical {
+  height: auto;
+  width: 0;
+  border: 0.5px solid var(--ion-color-secondary);
+  margin: 0;
+}
+
+
+.your-turn {
+  background-color: var(--ion-color-greened);
 }

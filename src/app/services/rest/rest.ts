@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 
 @Injectable({
@@ -7,14 +7,19 @@ import {HttpClient} from '@angular/common/http';
 })
 export class RestProvider {
 
+  /*const endpoint = 'http://localhost:3000/api/v1/';
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })
+  };*/
+
   constructor(public http: HttpClient) {
     console.log('Hello RestProvider Provider');
   }
 
-  public extractData(res: Object) {
-    // console.log(res);
-    // @ts-ignore
-    const body = res.json();
+  public extractData(res: Response) {
+    const body = res;
     return body || { };
   }
 

@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {GameService} from '../../services/game/game';
 import {LoadingController, ModalController, NavController} from '@ionic/angular';
 
 import {Round} from '../../models/game/round';
@@ -7,6 +6,7 @@ import {User} from '../../models/user';
 import {GameListItem} from '../../models/simpleGameItem';
 import {Game} from '../../models/game/game';
 import {NavParamsService} from '../../services/nav-params/nav-params.service';
+import {GameService} from '../../services/game/game.service';
 
 @Component({
     selector: 'app-single-play',
@@ -30,7 +30,6 @@ export class SinglePlayPage implements OnInit {
                 public navParamsService: NavParamsService) {
         this.setCurrentUser();
         this.setActualGames();
-
         this.coins = 12;
     }
 
@@ -40,7 +39,7 @@ export class SinglePlayPage implements OnInit {
 
     private setActualGames() {
         this.gameProvider.getGamesList().subscribe(
-            res => this.actualGames = res,
+            res => {this.actualGames = res; console.log(this.actualGames); },
             errorMessage => this.errorMessage = errorMessage);
     }
 

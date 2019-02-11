@@ -1,0 +1,75 @@
+
+ion-content .scroll-content {
+  background-color: var(--ion-color-primary);
+}
+
+#round-help-button {
+  font-size: 1.5em;
+  color: var(--ion-color-yellowed);
+
+}
+
+.title-round {
+  font-size: 12px;
+}
+
+.title-question {
+  font-size: 16px;
+}
+
+#next-question-button {
+  //position: fixed;
+  bottom: -50px;
+  display: block;
+  margin: auto;
+}
+
+#round-question-desc {
+  height: 12em;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 1%;
+  text-align: center;
+  background-color: var(--ion-color-light);
+  display: table;
+  margin-bottom: 1em;
+  width: -webkit-fill-available;
+}
+
+.question-text {
+  display: table-cell;
+  vertical-align: middle;
+  color: var(--ion-color-secondary);
+}
+
+#round-answers {
+  ion-button {
+    background-color: var(--ion-color-secondary);
+    color: var(--ion-color-light);
+  }
+  button {
+    text-transform: none;
+    margin: 10px 0;
+    height: 40px;
+
+
+
+    span {
+      justify-content: center;
+    }
+  }
+}
+
+#hidden-timeout {
+  display: none;
+}
+
+.timeout-line {
+  position: relative;
+  height: 6px;
+  background-color: var(--ion-color-greened);
+}
+
+.title-round, .title-question {
+  color: var(--ion-color-light);
+}

@@ -9,20 +9,22 @@ import { GameListItem } from '../../models/simpleGameItem';
  */
 @Component({
   selector: 'game-round-item',
-  templateUrl: 'game-round-item.html'
+  templateUrl: 'game-round-item.html',
+  styleUrls: ['./game-round-item.scss']
 })
 export class GameRoundItemComponent {
 
-  private itemValue: GameListItem;
+  @Input()
+  item: GameListItem;
+
+  @Input()
+  ngClass: string;
 
   constructor() {
   }
 
-  @Output() onClick: EventEmitter<any> = new EventEmitter();
-
-  @Input() set item(val: GameListItem) {
-    this.itemValue = val;
-  }
+  @Output()
+  onClick: EventEmitter<any> = new EventEmitter();
 
   onCardClick(clickedEntry: GameListItem): void {
       this.onClick.emit([clickedEntry.id]);

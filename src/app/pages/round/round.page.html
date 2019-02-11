@@ -1,9 +1,48 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>round</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="secondary">
+        <ion-buttons slot="start">
+            <ion-button id="round-help-button" slot="icon-only" (click)="presentPopover($event)">
+                <ion-icon name="help-circle"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title-round">
+                Round {{round.number}}
+            </div>
+            <div class="title-question">
+                Question {{currentQuestion.number}}
+            </div>
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button id="hidden-timeout">
+                <countdown [config]="{leftTime: time}"
+                           (finished)="onTimerFinished()"
+                           (notify)="onTimerFinished()">$!s-ext!
+                </countdown>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <progress-bar [progress]="100" [color-degraded]="{'100': 'green',  '66': 'yellow', '33': 'red'}">
+    </progress-bar>
+    <!--<div class="timeout-line" [style.width.%]="timeoutWidth"></div>-->
 </ion-header>
 
 <ion-content padding>
+    <div id="round-question-desc" class="show-list-numbers-and-dots">
+        <div class="question-text">
+            {{currentQuestion.description}}
+        </div>
+
+    </div>
+
+    <form id="round-answers">
+        <ion-button expand="block" color="transparent"
+                    on-click="selectAnswer(answer)"
+                    [@answerSelected]="answer.selectedState"
+                    *ngFor="let answer of currentQuestion.answers">
+            {{answer.description}}
+        </ion-button>
+        <!--<p #popoverContent></p>-->
+    </form>
 
 </ion-content>
