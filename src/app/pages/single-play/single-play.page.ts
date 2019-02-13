@@ -98,7 +98,7 @@ export class SinglePlayPage implements OnInit {
 
     goToRound(round: Round) {
         this.navParamsService.push('/round', {
-            round: round
+            round: round,
         });
     }
 

@@ -4,10 +4,10 @@ import {Question} from '../../models/game/question';
 import {CountdownComponent} from 'ngx-countdown';
 import {MenuController, NavController, NavParams, PopoverController} from '@ionic/angular';
 import {Answer} from '../../models/game/answer';
-import {RoundResultsPage} from '../../../../pages/round-results/round-results';
-import {RoundHelpPopoverPage} from '../../../../pages/round-help-popover/round-help-popover';
 import {NavParamsService} from '../../services/nav-params/nav-params.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {asyncScheduler, Observable, of} from 'rxjs';
+import {async} from 'q';
 
 @Component({
     selector: 'app-round',
@@ -49,7 +49,7 @@ export class RoundPage implements OnInit {
     successAudio: any;
     unsuccessAudio: any;
 
-    timeoutWidth = 100;
+    timeoutWidth = 90;
 
     answerShowed = false;
 
@@ -63,7 +63,6 @@ export class RoundPage implements OnInit {
         if (questionIndex) {
             this.questionIndex = questionIndex;
         }
-
         this.currentQuestion = this.round.questions[this.questionIndex];
     }
 

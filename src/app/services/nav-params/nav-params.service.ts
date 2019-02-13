@@ -13,8 +13,8 @@ export class NavParamsService {
 
     push(url: string, data: any = '') {
         this.data = data;
-        // this.navCtrl.navigateForward('/' + url);
-        this.router.navigate([url]);
+         this.navCtrl.navigateForward('/' + url);
+        // this.router.navigate([url]);
     }
 
     pop(url) {

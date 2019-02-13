@@ -1,9 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>round-results</ion-title>
+  <ion-toolbar color="secondary" hideBackButton="false">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Round results
+    </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content padding>
-
+<ion-content padding id="round-results">
+  <round-details-item [players]="game.players" [round]="round" *ngFor="let round of game.rounds"></round-details-item>
 </ion-content>

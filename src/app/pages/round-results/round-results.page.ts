@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Game} from '../../models/game/game';
+import {RoundDetailsItemComponent} from '../../components/round-details-item/round-details-item';
+import {NavParamsService} from '../../services/nav-params/nav-params.service';
 
 @Component({
   selector: 'app-round-results',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoundResultsPage implements OnInit {
 
-  constructor() { }
+  game: Game;
+  test: RoundDetailsItemComponent;
+
+  constructor(public navParams: NavParamsService) {
+
+    this.game = navParams.get('game');
+  }
 
   ngOnInit() {
   }

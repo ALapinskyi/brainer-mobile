@@ -16,14 +16,12 @@
         <ion-buttons slot="end">
             <ion-button id="hidden-timeout">
                 <countdown [config]="{leftTime: time}"
-                           (finished)="onTimerFinished()"
-                           (notify)="onTimerFinished()">$!s-ext!
+                           (finished)="onTimerFinished()">$!s-ext!
                 </countdown>
             </ion-button>
         </ion-buttons>
     </ion-toolbar>
-    <progress-bar [progress]="100" [color-degraded]="{'100': 'green',  '66': 'yellow', '33': 'red'}">
-    </progress-bar>
+    <progress-bar id="round-timer" [progress]="timeoutWidth" [color-degraded]="{'33': 'green',  '66': 'yellow', '100': 'red'}"></progress-bar>
     <!--<div class="timeout-line" [style.width.%]="timeoutWidth"></div>-->
 </ion-header>
 

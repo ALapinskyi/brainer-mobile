@@ -1,47 +1,79 @@
-round-details-item {
 
-    
-    .round-card {
-        background-color: color($colors, secondary, base);
-        margin-bottom: 5px;
-        height: 3.2em;
-        padding: 0;
-        border-radius: 0.4em;
-        //box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); 
+.round-card {
+  background-color: var(--ion-color-secondary);
+  margin-bottom: 5px;
+  height: 3.2em;
+  padding: 0;
+  border-radius: 0.4em;
+  //box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 
 
-        .grid, .col {
-            padding: 0;
-            height: -webkit-fill-available;
-        }
+  .grid, .col {
+    padding: 0;
+    height: -webkit-fill-available;
+  }
 
-        .round-category {
-            padding: 5px 10px;
+  .round-category {
+    padding: 5px 10px;
 
-            .first {
-                font-size: 1em;
-            }
-            .second{
-                font-size: 0.8em;
-                color: color($colors, primary, base);
-            }
-        }
-
-        .round-result {
-            padding: 1.5em 0;
-            
-            div{
-                font-size: 2em;
-                font-weight: bold;
-            }
-        }
+    .first {
+      font-size: 1em;
+      color: var(--ion-color-light);
     }
 
-    hr.vertical {
-        height: auto; 
-        width: 0;
-        border: 0.5px solid color($colors, primary, base);
-        margin: 0;
+    .second {
+      font-size: 0.8em;
+      color: var(--ion-color-primary);
     }
+  }
+
+  .round-result {
+    padding: 0.5em;
+    display: inline-block;
+
+    .round-overview {
+      .marker {
+        display: inline-block;
+        color: var(--ion-color-light);
+        font-size: 0.4em;
+        vertical-align: top;
+        margin-right: 8px;
+      }
+    }
+    div {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .question-color {
+      display: inline-block;
+      .question {
+        background-color: var(--ion-color-danger);
+        height: 13px;
+        width: 13px;
+        margin: 2px;
+        border-radius: 2px;
+      }
+      .correct {
+        background-color: var(--ion-color-greened);
+      }
+    }
+  }
+
+  .buttons-layout {
+    .bigger {
+
+    }
+  }
 }
+
+
+
+hr.vertical {
+  height: -webkit-fill-available;
+  width: 0;
+  border: 0.5px solid var(--ion-color-primary);
+  margin: 0;
+}
+
 

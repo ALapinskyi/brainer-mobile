@@ -1,20 +1,47 @@
 <ion-card-content class="round-card">
     <div>
-    <ion-grid>
-      <ion-row>
-        <ion-col col-7 class="round-category">
-            <div class="first">Round {{roundItem.number}}</div>
-            <div class="second">{{roundItem.category}}</div>
-        </ion-col>
-        <hr class="vertical">
-        <ion-col class="round-result">
-          <div class="round-overview">
-            <!--<div *ngFor="let e of roundItem.score.entries()" >
-1
-            </div>-->
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+        <ion-grid no-padding="true">
+            <ion-row>
+                <ion-col size="7" class="round-category">
+                    <div class="first" *ngIf="round.category !== undefined">Round {{round.number}}</div>
+                    <div class="second" *ngIf="round.category !== undefined">{{round.category}}</div>
+                </ion-col>
+                <hr class="vertical">
+                <ion-col class="round-result">
+                    <div class="round-overview" *ngIf="round.score !== undefined">
+                        <p class="marker">You:</p>
+                        <div *ngFor="let question of round.score | keyvalue" class="question-color">
+                            <div *ngFor="let user of players">
+                                <div id="{{user.username}}" class="question"
+                                     [ngClass]="{'correct': question.value.includes(user.username)}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+    <div class="buttons-layout">
+
+        <ion-grid no-padding="true">
+            <ion-row>
+                <ion-col>
+                    <ion-button class="smaller" color="greened">
+                        To friends
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button class="bigger" color="yellowed">
+                        Revenge
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button class="smaller" color="greened">
+                        Share
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
     </div>
 </ion-card-content>

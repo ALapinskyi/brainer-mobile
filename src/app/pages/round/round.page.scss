@@ -73,3 +73,20 @@ ion-content .scroll-content {
 .title-round, .title-question {
   color: var(--ion-color-light);
 }
+
+
+progress-bar{
+  > *, .progress-outer, .progress-outer > *  {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    border: none;
+    color: #fff;
+    text-align: center;
+  }
+  .progress-inner {
+    width: 50%;
+  }
+}
+

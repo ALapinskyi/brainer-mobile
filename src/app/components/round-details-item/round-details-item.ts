@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Round } from '../../models/game/round';
+import {User} from '../../models/user';
+import {Player} from '../../models/game/player';
 
 /**
  * Generated class for the RoundDetailsItemComponent component.
@@ -9,20 +11,30 @@ import { Round } from '../../models/game/round';
  */
 @Component({
   selector: 'round-details-item',
-  templateUrl: 'round-details-item.html'
+  templateUrl: 'round-details-item.html',
+  styleUrls: ['./round-details-item.scss']
 })
 export class RoundDetailsItemComponent {
+  private currentUser: User;
 
-  roundItem: Round;
+  @Input() round: Round;
+
+  @Input() players: Player[];
+  
 
   constructor() {
+    this.setCurrentUser();
   }
 
 
-  @Input() set round(val: Round) {
-    console.log(val);
-    this.roundItem = val;
+  private setCurrentUser() {
+    this.currentUser = {
+      username: 'olapinskyi',
+      firstName: 'Boss',
+      lastName: 'Gamer',
+      password: 'qwerty',
+      isActive: true
+    };
   }
-
 
 }
